@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #121216;
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e1e24;
+  padding: 0 12px;
+  border-bottom: 1px solid #333;
+  gap: 8px;
+}
+
+select {
+  background: #2b2b36;
+  color: #00ffcc;
+  border: 1px solid #444;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  max-width: 40%;
+  outline: none;
+}
+
+.status {
+  color: #00ffcc;
+  font-size: 11px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#fullscreenBtn {
+  background: #ff0055;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#fullscreenBtn:active {
+  background: #cc0044;
+}
+
+/* Screen එක පුරා 2x4 grid layout එක */
+.pad-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+  height: calc(100vh - 48px);
+}
+
+.pad {
+  background: #2b2b36;
+  border: 2px solid #3a3a4c;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8a8a9e;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.05s ease, transform 0.05s ease;
+}
+
+.pad:active,
+.pad.active {
+  background: #ff0055;
+  color: #fff;
+  border-color: #ff3377;
+  transform: scale(0.97);
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
+}
